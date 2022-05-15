@@ -1,9 +1,15 @@
+//icons
+import { Icon } from '@iconify/react';
+
+
 const Header = () => {
     return (
         <header>
-            <h1 className="mainTitle">
-                Tic Tac Toe
-            </h1>
+            <div className="mainTitle">
+                <h1>
+                    <span>T</span>ic-<span>T</span>ac-<span>T</span>oe!
+                </h1>
+            </div>
         </header>
     );
 }

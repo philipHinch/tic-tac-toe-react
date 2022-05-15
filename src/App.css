@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Rock+Salt&display=swap');
 *,*::after,*::before{
     margin: 0;
     padding: 0;
@@ -20,29 +19,76 @@ body{
 }
 /* header */
 .mainTitle{
+    font-size: 1.3rem;
+    font-family: 'Rock Salt', cursive;
     position: relative;
     display: flex;
     justify-content: center;
-    padding: 20px 40px;
-    margin: 10px 0 150px 0;
-    background-color: rgba(100, 149, 237,0.8);
+    align-items: center;
+    letter-spacing: 4px;
+    padding: 0px 40px;
+    margin: 10px auto 150px auto;
+    max-width: 800px;
+    /* background-color: rgba(100, 149, 237,0.8); */
+}
+.oHeader{
+    font-size: 3rem;
+    color: coral;
+}
+.xHeader{
+    font-size: 3rem;
+    color: rebeccapurple;
+
+}
+.mainTitle h1{
+    margin: 0 auto;
+}
+.mainTitle span{
+    font-size: 3rem;
+    color: crimson;
 }
 /* board */
+.resetButton{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -80px;
+    z-index: 2;
+    padding: 10px 20px;
+    outline: none;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-family: inherit;
+    letter-spacing: 2px;
+    transition: all 0.1s ease-in-out;
+}
+.redoIcon{
+    font-size: 1.5rem;
+    margin-left: 10px;
+}
+.resetButton:hover{
+    background-color: crimson;
+    color: white;
+}
+.resetButton:hover .redoIcon{
+    animation: rotate 1s infinite linear;
+}
 .boardContainer{
+    position: relative;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     margin: auto;
     width: 50%;
     aspect-ratio: 1/1;
     min-width: 300px;
-    background-color: white;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
-}
-.boardContainer.circleTurn .cell:hover::before {
-
-}
-.boardContainer.xTurn .cell:hover{
-    
+    max-width: 600px;
+    background-color: rgb(248, 252, 255);
+    box-shadow: 0px 0px 1000px rgba(255, 31, 31, 0.2);
 }
 /* cells */
 .cell{
@@ -83,10 +129,11 @@ body{
 /* symbols */
 .cell.oSymbol::before {
     content: '';
-  width: 80%;
-  height: 80%;
-  border-radius: 50%;
-  box-shadow: 0 0 0 10px inset coral;
+    width: 80%;
+    height: 80%;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px inset coral;
+    animation: fadeIn 0.3s ease-in-out;
 }
 .cell.xSymbol::before{
     content:'';
@@ -95,6 +142,8 @@ body{
     height: 80%;
     background-color: rebeccapurple;
     transform: rotate(45deg);
+    animation: fadeIn 0.3s ease-in-out;
+
 }
 .cell.xSymbol::after{
     content:'';
@@ -103,4 +152,26 @@ body{
     height: 80%;
     background-color: rebeccapurple;
     transform: rotate(-45deg);
+    animation: fadeIn 0.3s ease-in-out;
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes fadeOut {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes rotate {
+    100%{
+        transform: rotate(360deg);
+    }
 }

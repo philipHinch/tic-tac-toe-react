@@ -1,4 +1,6 @@
 import { useState } from "react";
+//icons
+import { Icon } from '@iconify/react';
 
 const Board = () => {
 
@@ -58,9 +60,23 @@ const Board = () => {
         setCircleTurn(!circleTurn)
     }
 
+    const resetGame = () => {
+        setCell1(null)
+        setCell2(null)
+        setCell3(null)
+        setCell4(null)
+        setCell5(null)
+        setCell6(null)
+        setCell7(null)
+        setCell8(null)
+        setCell9(null)
+    }
+
 
     return (
         <div className={`boardContainer ${ circleTurn ? 'circleTurn' : 'xTurn' }`}>
+            <button className="resetButton" onClick={resetGame}>Play Again <Icon className='redoIcon' icon="jam:redo" />
+            </button>
             <div className={`cell cell1 ${ cell1 }`} onClick={(e) => handleClick(e, 1)}></div>
             <div className={`cell cell2 ${ cell2 }`} onClick={(e) => handleClick(e, 2)}></div>
             <div className={`cell cell3 ${ cell3 }`} onClick={(e) => handleClick(e, 3)}></div>
