@@ -1,9 +1,12 @@
 import './App.css';
+import Board from './components/Board';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
-      <h1>tic tac toe</h1>
+      <Header />
+      <Board />
     </div>
   );
 }

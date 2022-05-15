@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family:  'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    letter-spacing: 1px;
+    background: url('./assets/images/double-bubble-outline.png') ;
+}
+.App{
+    height: 100vh;
+    width: 100vw;
+    overflow-x:hidden ;
+}
+/* header */
+.mainTitle{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 20px 40px;
+    margin: 10px 0 150px 0;
+    background-color: rgba(100, 149, 237,0.8);
+}
+/* board */
+.boardContainer{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    margin: auto;
+    width: 50%;
+    aspect-ratio: 1/1;
+    min-width: 300px;
+    background-color: white;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+}
+.boardContainer.circleTurn .cell:hover::before {
+
+}
+.boardContainer.xTurn .cell:hover{
+    
+}
+/* cells */
+.cell{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.cell1{
+    border-right: 5px solid #666;
+    border-bottom: 5px solid #666;
+}
+.cell2{
+    border-bottom: 5px solid #666;
+    border-right: 5px solid #666;
+}
+.cell3{
+    border-bottom: 5px solid #666;
+}
+.cell4{
+    border-bottom: 5px solid #666;
+    border-right: 5px solid #666;
+}
+.cell5{
+    border-right: 5px solid #666;
+    border-bottom: 5px solid #666;
+}
+.cell6{
+    border-bottom: 5px solid #666;
+}
+.cell7{
+    border-right: 5px solid #666;
+}
+.cell8{
+    border-right: 5px solid #666;
+}
+/* symbols */
+.cell.oSymbol::before {
+    content: '';
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px inset coral;
+}
+.cell.xSymbol::before{
+    content:'';
+    position: absolute;
+    width: 10px;
+    height: 80%;
+    background-color: rebeccapurple;
+    transform: rotate(45deg);
+}
+.cell.xSymbol::after{
+    content:'';
+    position: absolute;
+    width: 10px;
+    height: 80%;
+    background-color: rebeccapurple;
+    transform: rotate(-45deg);
+}
+/* .xSymbol::before,
+.xSymbol::after,
+.boardContainer.xTurn .cell:not(.xSymbol):not(.oSymbol):hover::before,
+.boardContainer.xTurn .cell:not(.xSymbol):not(.oSymbol):hover::after
+{
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 80%;
+    background-color: rebeccapurple;
+}
+.xSymbol::before,
+.boardContainer.xTurn .cell:not(.xSymbol):not(.oSymbol):hover::before{
+    transform: rotate(45deg);
+}
+.xSymbol::after,
+.boardContainer.xTurn .cell:not(.xSymbol):not(.oSymbol):hover::after{
+    transform: rotate(-45deg);
+}
+.cell.oSymbol::before,
+.cell.oSymbol::after,
+.board.circleTurn .cell:not(.xSymbol):not(.oSymbol):hover::before,
+.board.circleTurn .cell:not(.xSymbol):not(.oSymbol):hover::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    
+    
+}
+
+.cell.oSymbol::before,
+.board.circleTurn .cell:not(.xSymbol):not(.oSymbol):hover::before {
+  width: 80%;
+  height: 80%;
+  box-shadow: 0 0 0 10px inset coral;
+  
+
+}
+
+.cell.oSymbol::after,
+.board.circleTurn .cell:not(.xSymbol):not(.oSymbol):hover::after {
+  width: 80%;
+  height: 80%;
+  box-shadow: 0 0 0 10px inset coral;
+} */
